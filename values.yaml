@@ -1,0 +1,385 @@
+###
+# Theodolite resources
+###
+
+kafkaClient:
+  enabled: true
+  nodeSelector: {}
+
+
+####
+## configuration of sub charts
+###
+
+###
+# Grafana
+###
+grafana:
+  enabled: true
+  nodeSelector: {}
+  image:
+    repository: grafana/grafana
+    tag: 6.7.3
+    pullPolicy: IfNotPresent
+  # Administrator credentials when not using an existing secret (see below)
+  adminUser: admin
+  adminPassword: admin
+  grafana.ini:
+    #org_name: Theodolite
+    auth.anonymous:
+      # enable anonymous access
+      enabled: true
+      org_role: Admin # Role for unauthenticated users, other valid values are `Viewer`, `Editor` and `Admin`
+    users:
+      default_theme: light
+    #dashboards: # the following doesn't work but is planed
+      # Path to the default home dashboard. If this value is empty, then Grafana uses StaticRootPath + "dashboards/home.json"
+      #default_home_dashboard_path: "/tmp/dashboards/k8s-dashboard.json"
+  ## Sidecars that collect the configmaps with specified label and stores the included files them into the respective folders
+  ## Requires at least Grafana 5 to work and can't be used together with parameters dashboardProviders, datasources and dashboards
+  sidecar:
+    image:
+      repository: "kiwigrid/k8s-sidecar"
+      tag: "0.1.99"
+    imagePullPolicy: IfNotPresent
+    dashboards:
+      enabled: true
+      provider:
+        # allow updating provisioned dashboards from the UI
+        allowUiUpdates: true
+    datasources:
+      enabled: true
+  service:
+    nodePort: 31200
+    type: NodePort
+  rbac:
+    pspEnabled: false
+    namespaced: true
+
+
+###
+# Confluent Platform 
+###
+
+cp-helm-charts:
+  enabled: true
+  ## ------------------------------------------------------
+  ## Zookeeper
+  ## ------------------------------------------------------
+  cp-zookeeper:
+    enabled: true
+    nodeSelector: {}
+    servers: 1
+    image: confluentinc/cp-zookeeper
+    imageTag: 5.4.0
+    ## Optionally specify an array of imagePullSecrets. Secrets must be manually created in the namespace.
+    ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
+    imagePullSecrets:
+    #  - name: "regcred"
+    heapOptions: "-Xms300M -Xmx300M"
+    persistence:
+      enabled: true
+
+  ## ------------------------------------------------------
+  ## Kafka
+  ## ------------------------------------------------------
+  cp-kafka:
+    enabled: true
+    nodeSelector: {}
+    brokers: 3
+    image: confluentinc/cp-enterprise-kafka
+    imageTag: 5.4.0
+    ## Optionally specify an array of imagePullSecrets. Secrets must be manually created in the namespace.
+    ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
+    imagePullSecrets:
+    #  - name: "regcred"
+    heapOptions: "-Xms300M -Xmx300M"
+    persistence:
+      enabled: true
+    resources: {}
+    configurationOverrides:
+      #offsets.topic.replication.factor: 1
+      "message.max.bytes": "134217728" # 128 MB
+      # "message.max.bytes": "4194304" # 4 MB
+      
+      "replica.fetch.max.bytes": "134217728" # 128 MB
+      # "replica.fetch.max.bytes": "4194304" # 4 MB
+      
+      #default.replication.factor: 1
+      # "min.insync.replicas": 2
+      "auto.create.topics.enable": false
+      # "log.retention.ms": "10000" # 10s
+      "log.retention.ms": "7200000" # 2h
+      "metrics.sample.window.ms": "5000" #5s
+      "advertised.listeners": |-
+        EXTERNAL://localhost:31090
+      "listener.security.protocol.map": |-
+        PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
+    
+    nodeport:
+      enabled: false
+      servicePort: 19092
+      firstListenerPort: 31090
+
+
+  ## ------------------------------------------------------
+  ## Schema Registry
+  ## ------------------------------------------------------
+  cp-schema-registry:
+    enabled: true
+    nodeSelector: {}
+    image: confluentinc/cp-schema-registry
+    imageTag: 5.4.0
+    ## Optionally specify an array of imagePullSecrets. Secrets must be manually created in the namespace.
+    ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
+    imagePullSecrets:
+    #  - name: "regcred"
+    heapOptions: "-Xms300M -Xmx300M"
+    resources: {}
+    
+    external:
+      enabled: true
+      type: NodePort
+      servicePort: 8081
+      nodePort: 30099
+      annotations: {}
+
+    kafka:
+      bootstrapServers: theodolite-kafka-kafka-bootstrap:9092
+
+  cp-kafka-rest:
+    enabled: true
+
+  cp-kafka-connect:
+    enabled: true
+
+  cp-ksql-server:
+    enabled: true
+
+  cp-control-center:
+    enabled: true
+
+  ## The interval between refreshing metrics
+  pollIntervalSeconds: 15
+
+strimzi-kafka-operator:
+  createGlobalResources: true
+
+strimzi:
+  enabled: true
+  kafka:
+    listeners:
+      - name: plain
+        port: 9092
+        type: internal
+        tls: false
+    replicas: 3
+    config:
+      "message.max.bytes": "134217728" # 128 MB
+      # "message.max.bytes": "4194304" # 4 MB
+      
+      "replica.fetch.max.bytes": "134217728" #128 MB
+      # "replica.fetch.max.bytes": "4194304" #4 MB
+      
+      "auto.create.topics.enable": false
+      # "log.retention.ms": "7200000" # 2h
+      "log.retention.ms": "10000" # 10s
+      "metrics.sample.window.ms": "5000" #5s
+    jvmOptions:
+      "-Xmx": "300M"
+      "-Xms": "300M"
+    nodeSelectorTerms: []
+    resources: {}
+    
+  zookeeper:
+    replicas: 1
+    zooEntrance:
+      enabled: true
+      zookeeperClient:
+        enabled: true
+        nodeSelector: {}
+    nodeSelectorTerms: []
+  
+  topicOperator:
+    enabled: true
+
+
+###
+# Prometheus Monitoring Stack (Prometheus Operator)
+###
+kube-prometheus-stack:
+  global:
+    rbac:
+      create: true
+
+  commonLabels:
+    appScope: titan-ccp
+  
+  alertmanager:
+    enabled: true
+  
+  grafana:
+    enabled: true
+  
+  kubeApiServer:
+    enabled: true
+  
+  kubelet:
+    enabled: true
+  
+  kubeControllerManager:
+    enabled: true
+  
+  coreDns:
+    enabled: true
+  
+  kubeDns:
+    enabled: true
+   
+  kubeEtcd:
+    enabled: true
+  
+  kubeScheduler:
+    enabled: true
+  
+  kubeProxy:
+    enabled: true
+  
+  kubeStateMetrics:
+    enabled: true
+  
+  nodeExporter:
+    enabled: true
+  
+  prometheusOperator:
+    enabled: true
+    namespaces:
+      releaseNamespace: true
+      additional: []
+    nodeSelector: {}
+    admissionWebhooks:
+      enabled: true
+    tls:
+      enabled: true
+    serviceAccount:
+      create: true
+  
+  # We use our own Prometheus
+  prometheus:
+    enabled: false
+
+
+###
+# Prometheus
+###
+prometheus: 
+  enabled: true
+  nodeSelector: {}
+  
+  serviceAccount:
+    enabled: true
+  role:
+    enabled: true
+  roleBinding:
+    enabled: true
+
+###
+# Theodolite Operator
+###
+operator:
+  enabled: true
+  
+  image: ghcr.io/cau-se/theodolite
+  imageTag: latest
+  imagePullPolicy: Always
+
+  nodeSelector: {}
+
+  sloChecker:
+    generic:
+      enabled: true
+      image: ghcr.io/cau-se/theodolite-slo-checker-generic
+      imageTag: latest
+      imagePullPolicy: Always
+    lagTrend:
+      enabled: true
+      image: ghcr.io/cau-se/theodolite-slo-checker-lag-trend
+      imageTag: latest
+      imagePullPolicy: Always
+    droppedRecordsKStreams:
+      enabled: true
+      image: ghcr.io/cau-se/theodolite-slo-checker-dropped-records-kstreams
+      imageTag: latest
+      imagePullPolicy: Always
+
+  resultsVolume:
+    persistent:
+      enabled: true
+      # existingClaim:
+      # storageClassName:
+      accessModes:
+        - ReadWriteOnce
+      size: 1Gi
+    accessSidecar:
+      enabled: true
+      image: busybox
+      imageTag: stable
+      imagePullPolicy: IfNotPresent
+
+  theodoliteBenchmarks:
+    resourceConfigMaps:
+      uc1LoadGenerator: true
+      uc1Kstreams: true
+      uc1Flink: true
+      uc1BeamFlink: true
+      uc1BeamSamza: true
+      uc2LoadGenerator: true
+      uc2Kstreams: true
+      uc2Flink: true
+      uc2BeamFlink: true
+      uc2BeamSamza: true
+      uc3LoadGenerator: true
+      uc3Kstreams: true
+      uc3Flink: true
+      uc3BeamFlink: true
+      uc3BeamSamza: true
+      uc4LoadGenerator: true
+      uc4Kstreams: true
+      uc4Flink: true
+      uc4BeamFlink: true
+      uc4BeamSamza: true
+    benchmarks:
+      uc1Kstreams: true
+      uc1Flink: true
+      uc1BeamFlink: true
+      uc1BeamSamza: true
+      uc2Kstreams: true
+      uc2Flink: true
+      uc2BeamFlink: true
+      uc2BeamSamza: true
+      uc3Kstreams: true
+      uc3Flink: true
+      uc3BeamFlink: true
+      uc3BeamSamza: true
+      uc4Kstreams: true
+      uc4Flink: true
+      uc4BeamFlink: true
+      uc4BeamSamza: true
+
+serviceAccount:
+  create: true
+
+rbac:
+  create: true
+  additionalRules: []
+
+randomScheduler:
+  enabled: true
+  image: ghcr.io/cau-se/theodolite-random-scheduler
+  imageTag: latest
+  imagePullPolicy: Always
+  rbac:
+    create: true
+  serviceAccount:
+    create: true
+  nodeSelector: {}
