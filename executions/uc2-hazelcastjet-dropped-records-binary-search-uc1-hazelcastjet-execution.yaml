@@ -1,0 +1,32 @@
+apiVersion: theodolite.com/v1
+kind: execution
+metadata:
+  name: uc2-hazelcastjet-dropped-records-binary-search-uc1-hazelcastjet
+spec:
+  benchmark: "uc2-hazelcastjet"
+  load:
+    loadType: "NumSensors"
+    loadValues: [25000, 50000]
+  resources:
+    resourceType: "Instances"
+    resourceValues: [1, 2, 3, 4, 5, 6]
+  slos:
+    - sloType: "dropped records"
+      prometheusUrl: "http://prometheus-operated:9090"
+      offset: 0
+      properties: 
+        externalSloUrl: "http://localhost:80/evaluate-slope"
+        threshold: 1000
+        warmup: 60
+  execution:
+    strategy: "BinarySearch"
+    duration: 120 # in seconds
+    repetitions: 1
+    loadGenerationDelay: 30 # in seconds
+    restrictions:
+      - "LowerBound"
+  configOverrides:
+    - patcher:
+        type: "SchedulerNamePatcher"
+        resource: "uc1-hazelcastjet-deployment.yaml"
+      value: "random-scheduler" 

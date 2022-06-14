@@ -1,0 +1,211 @@
+{
+  "executionId": 29,
+  "name": "uc3-beam-samza-lag-trend-full-search-uc1-beam-samza",
+  "benchmark": "uc3-beam-samza",
+  "load": {
+    "loadType": "NumSensors",
+    "loadValues": [
+      25000,
+      50000,
+      75000,
+      100000,
+      125000,
+      150000
+    ]
+  },
+  "resources": {
+    "resourceType": "Instances",
+    "resourceValues": [
+      1,
+      2
+    ]
+  },
+  "slos": [
+    {
+      "sloType": "lag trend",
+      "prometheusUrl": "http://prometheus-operated:9090",
+      "offset$delegate": {
+        "value": 0
+      },
+      "properties": {
+        "externalSloUrl": "http://localhost:80/evaluate-slope",
+        "threshold": "1000",
+        "warmup": "60"
+      }
+    }
+  ],
+  "execution": {
+    "strategy": "FullSearch",
+    "duration$delegate": {
+      "value": 120
+    },
+    "repetitions$delegate": {
+      "value": 1
+    },
+    "restrictions": [
+      "LowerBound"
+    ],
+    "loadGenerationDelay": 30,
+    "afterTeardownDelay": 5
+  },
+  "configOverrides": [
+    {
+      "patcher": {
+        "type": "SchedulerNamePatcher",
+        "resource": "uc1-beam-samza-deployment.yaml",
+        "properties": {}
+      },
+      "value": "random-scheduler"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "beam-samza-service.yaml",
+        "properties": {
+          "variableName": "deployed-for-execution"
+        }
+      },
+      "value": "uc3-beam-samza-lag-trend-full-search-uc1-beam-samza"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "service-monitor.yaml",
+        "properties": {
+          "variableName": "deployed-for-execution"
+        }
+      },
+      "value": "uc3-beam-samza-lag-trend-full-search-uc1-beam-samza"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc3-beam-samza-deployment.yaml",
+        "properties": {
+          "variableName": "deployed-for-execution"
+        }
+      },
+      "value": "uc3-beam-samza-lag-trend-full-search-uc1-beam-samza"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc3-load-generator-deployment.yaml",
+        "properties": {
+          "variableName": "deployed-for-execution"
+        }
+      },
+      "value": "uc3-beam-samza-lag-trend-full-search-uc1-beam-samza"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc3-load-generator-service.yaml",
+        "properties": {
+          "variableName": "deployed-for-execution"
+        }
+      },
+      "value": "uc3-beam-samza-lag-trend-full-search-uc1-beam-samza"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "beam-samza-service.yaml",
+        "properties": {
+          "variableName": "deployed-for-benchmark"
+        }
+      },
+      "value": "uc3-beam-samza"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "service-monitor.yaml",
+        "properties": {
+          "variableName": "deployed-for-benchmark"
+        }
+      },
+      "value": "uc3-beam-samza"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc3-beam-samza-deployment.yaml",
+        "properties": {
+          "variableName": "deployed-for-benchmark"
+        }
+      },
+      "value": "uc3-beam-samza"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc3-load-generator-deployment.yaml",
+        "properties": {
+          "variableName": "deployed-for-benchmark"
+        }
+      },
+      "value": "uc3-beam-samza"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc3-load-generator-service.yaml",
+        "properties": {
+          "variableName": "deployed-for-benchmark"
+        }
+      },
+      "value": "uc3-beam-samza"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "beam-samza-service.yaml",
+        "properties": {
+          "variableName": "app.kubernetes.io/created-by"
+        }
+      },
+      "value": "theodolite"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "service-monitor.yaml",
+        "properties": {
+          "variableName": "app.kubernetes.io/created-by"
+        }
+      },
+      "value": "theodolite"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc3-beam-samza-deployment.yaml",
+        "properties": {
+          "variableName": "app.kubernetes.io/created-by"
+        }
+      },
+      "value": "theodolite"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc3-load-generator-deployment.yaml",
+        "properties": {
+          "variableName": "app.kubernetes.io/created-by"
+        }
+      },
+      "value": "theodolite"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc3-load-generator-service.yaml",
+        "properties": {
+          "variableName": "app.kubernetes.io/created-by"
+        }
+      },
+      "value": "theodolite"
+    }
+  ]
+}

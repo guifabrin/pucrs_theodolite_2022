@@ -6,21 +6,24 @@ spec:
   benchmark: "uc1-beam-flink"
   load:
     loadType: "NumSensors"
-    loadValues: [25000, 50000, 75000, 100000, 125000, 150000]
+    loadValues: [25000, 50000]
   resources:
     resourceType: "Instances"
-    resourceValues: [1, 2]
+    resourceValues: [1, 2, 3, 4, 5, 6]
   slos:
     - sloType: "generic"
       prometheusUrl: "http://prometheus-operated:9090"
       offset: 0
-      properties:
-        threshold: 2000
+      properties: 
         externalSloUrl: "http://localhost:80/evaluate-slope"
-        warmup: 60 # in seconds
+        queryAggregation: max
+        repetitionAggregation: median
+        operator: lte
+        threshold: 1000
+        promQLQuery: "sum by(job) (kafka_streams_stream_task_metrics_dropped_records_total>=0)"
   execution:
     strategy: "BinarySearch"
-    duration: 300 # in seconds
+    duration: 120 # in seconds
     repetitions: 1
     loadGenerationDelay: 30 # in seconds
     restrictions:

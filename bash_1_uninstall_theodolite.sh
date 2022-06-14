@@ -1,9 +1,11 @@
 helm uninstall theodolite
-kubectl get benchmark | sed 's/|/ /' | awk '{print $1, $8}' | while read line; do kubectl delete benchmark "$line"; done;
-kubectl get execution | sed 's/|/ /' | awk '{print $1, $8}' | while read line; do kubectl delete execution "$line"; done;
-kubectl get statefulset | sed 's/|/ /' | awk '{print $1, $8}' | while read line; do kubectl delete statefulset "$line"; done;
-kubectl get services | sed 's/|/ /' | awk '{print $1, $8}' | while read line; do kubectl delete service "$line"; done;
-kubectl get pods | sed 's/|/ /' | awk '{print $1, $8}' | while read line; do kubectl delete pod "$line" ; done;
+kubectl get serviceaccounts | sed 's/|/ /' | awk '{print $1, $8}' | while read line; do kubectl delete serviceaccounts "$line"  --grace-period=0 --force; done;
+kubectl get benchmark | sed 's/|/ /' | awk '{print $1, $8}' | while read line; do kubectl delete benchmark "$line" --grace-period=0 --force; done;
+kubectl get execution | sed 's/|/ /' | awk '{print $1, $8}' | while read line; do kubectl delete execution "$line" --grace-period=0 --force; done;
+kubectl get statefulset | sed 's/|/ /' | awk '{print $1, $8}' | while read line; do kubectl delete statefulset "$line" --grace-period=0 --force; done;
+kubectl get services | sed 's/|/ /' | awk '{print $1, $8}' | while read line; do kubectl delete service "$line" --grace-period=0 --force; done;
+kubectl get pods | sed 's/|/ /' | awk '{print $1, $8}' | while read line; do kubectl delete pod "$line"  --grace-period=0 --force; done;
+
 
 # CRDs for Theodolite
 kubectl delete crd executions.theodolite.com
