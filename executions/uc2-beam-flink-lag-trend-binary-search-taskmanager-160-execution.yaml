@@ -1,0 +1,27 @@
+apiVersion: theodolite.com/v1
+kind: execution
+metadata:
+  name: uc2-beam-flink-lag-trend-binary-search-taskmanager-160
+spec:
+  benchmark: "uc2-beam-flink-160"
+  load:
+    loadType: "NumSensors"
+    loadValues: [10000, 20000, 4000, 8000, 16000, 32000, 64000, 128000, 256000, 512000, 1024000, 2048000]
+  resources:
+    resourceType: "Instances"
+    resourceValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  slos:
+    - sloType: "lag trend"
+      prometheusUrl: "http://prometheus-operated:9090"
+      offset: 0
+      properties: 
+        externalSloUrl: "http://localhost:80/evaluate-slope"
+        threshold: 1000
+        warmup: 0
+  execution:
+    strategy: "BinarySearch"
+    duration: 60 # in seconds
+    repetitions: 1
+    loadGenerationDelay: 0 # in seconds
+    restrictions: []
+  configOverrides: [] 

@@ -1,0 +1,28 @@
+operator:
+  sloChecker:
+    generic:
+      enabled: true
+      image: ghcr.io/cau-se/theodolite-slo-checker-generic
+      imageTag: latest
+      imagePullPolicy: Always
+    lagTrend:
+      enabled: true
+      image: ghcr.io/cau-se/theodolite-slo-checker-lag-trend
+      imageTag: latest
+      imagePullPolicy: Always
+    droppedRecordsKStreams:
+      enabled: true
+      image: ghcr.io/cau-se/theodolite-slo-checker-dropped-records-kstreams
+      imageTag: latest
+      imagePullPolicy: Always
+
+  resultsVolume:
+    enabled: false
+
+strimzi:
+  kafka:
+    replicas: 10
+    config: 
+      "offsets.topic.replication.factor": "10"
+  zookeeper:
+    replicas: 3

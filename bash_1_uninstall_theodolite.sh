@@ -31,3 +31,5 @@ kubectl delete crd kafkabridges.kafka.strimzi.io
 kubectl delete crd kafkaconnectors.kafka.strimzi.io
 kubectl delete crd kafkamirrormaker2s.kafka.strimzi.io
 kubectl delete crd kafkarebalances.kafka.strimzi.io
+
+python3 py_1_organize_results.py

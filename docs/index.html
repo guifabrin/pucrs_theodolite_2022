@@ -1,0 +1,149 @@
+<head>
+  <!-- Load plotly.js into the DOM -->
+  <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+  <style>
+    .js-plotly-plot {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    let count = 0;
+    const systems_name = {
+        'beam-flink': 'Apache Beam',
+        'beam-samza': 'Apache Samza',
+        'flink': 'Apache Flink',
+        'kstreams': 'Apache Kafka',
+    }
+    fetch("./results.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const benchmarks = ["uc1", "uc2", "uc3"];
+        const partitions = [40, 160, 400, 1600];
+        const systems = ["beam-flink", "beam-samza", "flink", "kstreams"];
+        const loadValues = [
+          10000, 20000, 4000, 8000, 16000, 32000, 64000, 128000, 256000, 512000,
+          1024000, 2048000,
+        ].sort((a, b) => a - b);
+        for (const uc of benchmarks) {
+          const h3 = document.createElement("h3");
+          h3.innerText = `${uc.toUpperCase()} results`;
+          document.body.append(h3);
+          for (const system of systems) {
+            const traces = [];
+            if (!data[`${uc}-${system}`]) {
+              continue;
+            }
+            const div = document.createElement("div");
+            div.id = `plotly_${count}`;
+            document.body.appendChild(div);
+            for (const partition of partitions) {
+              if (!data[`${uc}-${system}`][partition]) {
+                continue;
+              }
+              const values = data[`${uc}-${system}`][partition];
+              let yValues = null;
+              try {
+                yValues = loadValues.map(
+                  (value) =>
+                    values[value].reduce((a, b) => a + b) / values[value].length
+                );
+              } catch (_) {
+                continue;
+              }
+              traces.push({
+                x: loadValues,
+                y: yValues,
+                type: "scatter",
+                name: partition,
+              });
+            }
+            Plotly.newPlot(div.id, traces, {
+              width: 800,
+              height: 400,
+              title: {
+                text: `${uc.toUpperCase()} ${systems_name[system]}`,
+                xref: "paper",
+                x: 0.05,
+              },
+              xaxis: {
+                title: {
+                  text: "Load values",
+                },
+                range: [loadValues[0], loadValues[loadValues.length - 1]],
+              },
+              yaxis: {
+                title: {
+                  text: "Mininum machines",
+                },
+                range: [0.5, 10],
+              },
+            });
+            count += 1;
+          }
+          document.body.append(document.createElement("hr"));
+        }
+
+        for (const uc of benchmarks) {
+          const h3 = document.createElement("h3");
+          h3.innerText = `${uc.toUpperCase()} comparatives`;
+          document.body.append(h3);
+          for (const partition of partitions) {
+            const traces = [];
+            const div = document.createElement("div");
+            div.id = `plotly_${count}`;
+            document.body.appendChild(div);
+            for (const system of systems) {
+              if (
+                !data[`${uc}-${system}`] ||
+                !data[`${uc}-${system}`][partition]
+              ) {
+                continue;
+              }
+              const values = data[`${uc}-${system}`][partition];
+              let yValues = null;
+              try {
+                yValues = loadValues.map(
+                  (value) =>
+                    values[value].reduce((a, b) => a + b) / values[value].length
+                );
+              } catch (_) {
+                continue;
+              }
+              traces.push({
+                x: loadValues,
+                y: yValues,
+                type: "scatter",
+                name: systems_name[system],
+              });
+            }
+            Plotly.newPlot(div.id, traces, {
+              width: 800,
+              height: 400,
+              title: {
+                text: `${uc.toUpperCase()} ${partition} partitions`,
+                xref: "paper",
+                x: 0.05,
+              },
+              xaxis: {
+                title: {
+                  text: "Load values",
+                },
+                range: [loadValues[0], loadValues[loadValues.length - 1]],
+              },
+              yaxis: {
+                title: {
+                  text: "Mininum machines",
+                },
+                range: [0.5, 10],
+              },
+            });
+            count += 1;
+          }
+          document.body.append(document.createElement("hr"));
+        }
+      });
+  </script>
+</body>

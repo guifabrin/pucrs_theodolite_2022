@@ -6,10 +6,10 @@ spec:
   benchmark: "uc3-beam-samza"
   load:
     loadType: "NumSensors"
-    loadValues: [25000, 50000]
+    loadValues: [10000, 20000, 4000, 8000, 16000, 32000, 64000, 128000, 256000, 512000, 1024000, 2048000]
   resources:
     resourceType: "Instances"
-    resourceValues: [1, 2, 3, 4, 5, 6]
+    resourceValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   slos:
     - sloType: "lag trend"
       prometheusUrl: "http://prometheus-operated:9090"
@@ -17,16 +17,11 @@ spec:
       properties: 
         externalSloUrl: "http://localhost:80/evaluate-slope"
         threshold: 1000
-        warmup: 60
+        warmup: 0
   execution:
     strategy: "BinarySearch"
-    duration: 120 # in seconds
+    duration: 60 # in seconds
     repetitions: 1
-    loadGenerationDelay: 30 # in seconds
-    restrictions:
-      - "LowerBound"
-  configOverrides:
-    - patcher:
-        type: "SchedulerNamePatcher"
-        resource: "uc1-beam-samza-deployment.yaml"
-      value: "random-scheduler" 
+    loadGenerationDelay: 0 # in seconds
+    restrictions: []
+  configOverrides: [] 

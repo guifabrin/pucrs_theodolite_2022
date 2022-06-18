@@ -1,0 +1,7 @@
+labels,timestamp,value
+{consumergroup=__strimzi-topic-operator-kstreams},1655526267,3
+{consumergroup=__strimzi-topic-operator-kstreams},1655526272,3
+{consumergroup=__strimzi-topic-operator-kstreams},1655526277,3
+{consumergroup=__strimzi-topic-operator-kstreams},1655526282,0
+{consumergroup=__strimzi-topic-operator-kstreams},1655526287,0
+{consumergroup=__strimzi-topic-operator-kstreams},1655526292,0

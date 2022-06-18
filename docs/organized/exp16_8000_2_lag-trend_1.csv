@@ -1,0 +1,12 @@
+labels,timestamp,value
+{consumergroup=__strimzi-topic-operator-kstreams},1655297562,0
+{consumergroup=__strimzi-topic-operator-kstreams},1655297582,2
+{consumergroup=__strimzi-topic-operator-kstreams},1655297587,2
+{consumergroup=__strimzi-topic-operator-kstreams},1655297592,2
+{consumergroup=__strimzi-topic-operator-kstreams},1655297597,0
+{consumergroup=__strimzi-topic-operator-kstreams},1655297602,0
+{consumergroup=__strimzi-topic-operator-kstreams},1655297607,0
+{consumergroup=__strimzi-topic-operator-kstreams},1655297612,0
+{consumergroup=__strimzi-topic-operator-kstreams},1655297617,0
+{consumergroup=__strimzi-topic-operator-kstreams},1655297622,0
+{consumergroup=__strimzi-topic-operator-kstreams},1655297627,2

@@ -1,0 +1,75 @@
+apiVersion: theodolite.com/v1
+kind: benchmark
+metadata:
+  name: uc1-beam-samza-400
+spec:
+  infrastructure:
+    afterActions: []
+    beforeActions: []
+    resources: []
+  kafkaConfig:
+    bootstrapServer: theodolite-kafka-kafka-bootstrap:9092
+    topics:
+    - name: input
+      numPartitions: 400
+      removeOnly: false
+      replicationFactor: 1
+    - name: .*samza.*
+      numPartitions: 0
+      removeOnly: true
+      replicationFactor: 0
+    - name: .*uc1-application.*
+      numPartitions: 0
+      removeOnly: true
+      replicationFactor: 0
+  loadGenerator:
+    afterActions: []
+    beforeActions: []
+    resources:
+    - configMap:
+        files:
+        - uc1-load-generator-deployment.yaml
+        - uc1-load-generator-service.yaml
+        name: benchmark-resources-uc1-load-generator
+  loadTypes:
+  - patchers:
+    - properties:
+        container: workload-generator
+        variableName: NUM_SENSORS
+      resource: uc1-load-generator-deployment.yaml
+      type: EnvVarPatcher
+    - properties:
+        loadGenMaxRecords: "150000"
+      resource: uc1-load-generator-deployment.yaml
+      type: NumSensorsLoadGeneratorReplicaPatcher
+    typeName: NumSensors
+  name: ""
+  resourceTypes:
+  - patchers:
+    - properties: {}
+      resource: uc1-beam-samza-deployment.yaml
+      type: ReplicaPatcher
+    typeName: Instances
+  sut:
+    afterActions:
+    - exec:
+        command:
+        - bash
+        - -c
+        - bin/zkCli.sh -server $ZOOKEEPER_SERVER deleteall /app-theodolite-uc1-application-1
+        timeoutSeconds: 60
+      selector:
+        container: zookeeper-client
+        pod:
+          matchLabels:
+            app: zookeeper-client
+    beforeActions: []
+    resources:
+    - configMap:
+        files:
+        - uc1-beam-samza-deployment.yaml
+        - beam-samza-service.yaml
+        - service-monitor.yaml
+        name: benchmark-resources-uc1-beam-samza
+status:
+  resourceSetsState: Pending

@@ -1,0 +1,92 @@
+{
+  "name": "uc1-kstreams-160",
+  "resourceTypes": [
+    {
+      "typeName": "Instances",
+      "patchers": [
+        {
+          "type": "ReplicaPatcher",
+          "resource": "uc1-kstreams-deployment.yaml",
+          "properties": {}
+        }
+      ]
+    }
+  ],
+  "loadTypes": [
+    {
+      "typeName": "NumSensors",
+      "patchers": [
+        {
+          "type": "EnvVarPatcher",
+          "resource": "uc1-load-generator-deployment.yaml",
+          "properties": {
+            "container": "workload-generator",
+            "variableName": "NUM_SENSORS"
+          }
+        },
+        {
+          "type": "NumSensorsLoadGeneratorReplicaPatcher",
+          "resource": "uc1-load-generator-deployment.yaml",
+          "properties": {
+            "loadGenMaxRecords": "150000"
+          }
+        }
+      ]
+    }
+  ],
+  "kafkaConfig": {
+    "bootstrapServer": "theodolite-kafka-kafka-bootstrap:9092",
+    "topics": [
+      {
+        "name": "input",
+        "numPartitions$delegate": {
+          "value": 160
+        },
+        "replicationFactor$delegate": {
+          "value": 1
+        },
+        "removeOnly$delegate": {
+          "state": false
+        }
+      }
+    ]
+  },
+  "infrastructure": {
+    "resources": [],
+    "beforeActions": [],
+    "afterActions": []
+  },
+  "sut": {
+    "resources": [
+      {
+        "configMap": {
+          "name": "benchmark-resources-uc1-kstreams",
+          "files": [
+            "uc1-kstreams-deployment.yaml",
+            "uc1-kstreams-service.yaml",
+            "uc1-jmx-configmap.yaml",
+            "uc1-service-monitor.yaml"
+          ]
+        }
+      }
+    ],
+    "beforeActions": [],
+    "afterActions": []
+  },
+  "loadGenerator": {
+    "resources": [
+      {
+        "configMap": {
+          "name": "benchmark-resources-uc1-load-generator",
+          "files": [
+            "uc1-load-generator-deployment.yaml",
+            "uc1-load-generator-service.yaml"
+          ]
+        }
+      }
+    ],
+    "beforeActions": [],
+    "afterActions": []
+  },
+  "namespace": "default"
+}

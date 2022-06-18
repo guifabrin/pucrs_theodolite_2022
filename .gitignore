@@ -1,2 +1,4 @@
 cluster-ca-cert.pem
 theodolite/
+/.idea
+/venv

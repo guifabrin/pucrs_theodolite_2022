@@ -1,0 +1,92 @@
+apiVersion: theodolite.com/v1
+kind: benchmark
+metadata:
+  name: uc4-beam-samza-400
+spec:
+  infrastructure:
+    afterActions: []
+    beforeActions: []
+    resources: []
+  kafkaConfig:
+    bootstrapServer: theodolite-kafka-kafka-bootstrap:9092
+    topics:
+    - name: input
+      numPartitions: 400
+      removeOnly: false
+      replicationFactor: 1
+    - name: output
+      numPartitions: 400
+      removeOnly: false
+      replicationFactor: 1
+    - name: configuration
+      numPartitions: 400
+      removeOnly: false
+      replicationFactor: 1
+    - name: aggregation-feedback
+      numPartitions: 400
+      removeOnly: false
+      replicationFactor: 1
+    - name: theodolite-.*
+      numPartitions: 0
+      removeOnly: true
+      replicationFactor: 0
+    - name: .*samza.*
+      numPartitions: 0
+      removeOnly: true
+      replicationFactor: 0
+    - name: .*uc4-application.*
+      numPartitions: 0
+      removeOnly: true
+      replicationFactor: 0
+  loadGenerator:
+    afterActions: []
+    beforeActions: []
+    resources:
+    - configMap:
+        files:
+        - uc4-load-generator-deployment.yaml
+        - uc4-load-generator-service.yaml
+        name: benchmark-resources-uc4-load-generator
+  loadTypes:
+  - patchers:
+    - properties:
+        container: workload-generator
+        variableName: NUM_NESTED_GROUPS
+      resource: uc4-load-generator-deployment.yaml
+      type: EnvVarPatcher
+    - properties:
+        loadGenMaxRecords: "150000"
+        numSensors: "4.0"
+      resource: uc4-load-generator-deployment.yaml
+      type: NumNestedGroupsLoadGeneratorReplicaPatcher
+    typeName: NumNestedGroups
+  name: ""
+  resourceTypes:
+  - patchers:
+    - properties: {}
+      resource: uc4-beam-samza-deployment.yaml
+      type: ReplicaPatcher
+    typeName: Instances
+  sut:
+    afterActions:
+    - exec:
+        command:
+        - bash
+        - -c
+        - bin/zkCli.sh -server $ZOOKEEPER_SERVER deleteall /app-theodolite-uc4-application-1
+        timeoutSeconds: 60
+      selector:
+        container: zookeeper-client
+        pod:
+          matchLabels:
+            app: zookeeper-client
+    beforeActions: []
+    resources:
+    - configMap:
+        files:
+        - uc4-beam-samza-deployment.yaml
+        - beam-samza-service.yaml
+        - service-monitor.yaml
+        name: benchmark-resources-uc4-beam-samza
+status:
+  resourceSetsState: Pending

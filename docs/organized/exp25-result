@@ -1,0 +1,1299 @@
+{
+  "results": [
+    [
+      {
+        "first": {
+          "number": 4000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 4000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 4000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 8000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 8000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 8000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 10000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 10000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 10000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 16000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 16000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 16000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 20000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 20000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 20000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 32000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 32000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 32000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 64000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 64000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 64000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      false
+    ],
+    [
+      {
+        "first": {
+          "number": 128000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 128000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      false
+    ],
+    [
+      {
+        "first": {
+          "number": 128000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 3,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 256000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 256000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      false
+    ],
+    [
+      {
+        "first": {
+          "number": 256000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 3,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      false
+    ],
+    [
+      {
+        "first": {
+          "number": 256000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 4,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 512000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 512000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 512000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 1024000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 1024000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 1024000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 2048000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 2048000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 2048000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc1-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc1-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ]
+  ]
+}

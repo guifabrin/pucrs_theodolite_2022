@@ -1,5 +1,7 @@
-python3 run_3_execution.py
+# python3 py_3_generate_benchmarks_and_executions.py
 
-kubectl get execution | sed 's/|/ /' | awk '{print $1, $8}' | while read line; do kubectl delete execution "$line"; done;
+for file in "benchmarks/*.yaml"; do kubectl apply -f "./${file}"; done;
 
 for file in "executions/*.yaml"; do kubectl apply -f "./${file}"; done;
+
+./bash_3_delete_finished.sh
