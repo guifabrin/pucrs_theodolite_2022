@@ -40,7 +40,7 @@ def demand(exp_id, directory, threshold, warmup_sec):
 
 
 if __name__ == '__main__':
-    results_dir = './docs/temp'
+    results_dir = './temp'
     total_exp = 0
     try:
         f = open("{}/expID.txt".format(results_dir), "r")
