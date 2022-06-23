@@ -1,0 +1,1408 @@
+{
+  "results": [
+    [
+      {
+        "first": {
+          "number": 1,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 1,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 1,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 2,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 2,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 2,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 3,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 3,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 3,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 4,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 4,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 4,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 5,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 5,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 5,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 6,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 6,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 6,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 7,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 7,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 7,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 8,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 8,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 8,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      false
+    ],
+    [
+      {
+        "first": {
+          "number": 9,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 9,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 9,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_NESTED_GROUPS"
+              }
+            },
+            {
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {}
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "jobmanager-deployment.yaml",
+              "properties": {
+                "container": "jobmanager",
+                "variableName": "PARALLELISM"
+              }
+            },
+            {
+              "type": "EnvVarPatcher",
+              "resource": "taskmanager-deployment.yaml",
+              "properties": {
+                "container": "taskmanager",
+                "variableName": "PARALLELISM"
+              }
+            }
+          ]
+        }
+      },
+      true
+    ]
+  ]
+}

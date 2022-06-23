@@ -2,3 +2,4 @@ cluster-ca-cert.pem
 theodolite/
 /.idea
 /venv
+/__pycache__

@@ -9,27 +9,47 @@
 </head>
 
 <body>
+  <div id="myDiv"></div>
   <script>
     let count = 0;
     const systems_name = {
-        'beam-flink': 'Apache Beam',
-        'beam-samza': 'Apache Samza',
-        'flink': 'Apache Flink',
-        'kstreams': 'Apache Kafka',
-    }
+      "beam-flink": "Apache Beam",
+      "beam-samza": "Apache Samza",
+      flink: "Apache Flink",
+      kstreams: "Apache Kafka",
+    };
+    const benchmarks = ["uc1", "uc2", "uc3", "uc4"];
+    const partitions = {
+      uc1: [40, 160, 400, 1600],
+      uc2: [40, 160],
+      uc3: [40, 160],
+      uc4: [40, 160],
+    };
+    const systems = ["beam-flink", "beam-samza", "flink", "kstreams"];
+    const loadValues = {
+      uc1: [
+        10000, 20000, 4000, 8000, 16000, 32000, 64000, 128000, 256000,
+        512000, 1024000, 2048000,
+      ].sort((a, b) => a - b),
+
+      uc2: [
+        10000, 20000, 4000, 8000, 16000, 32000, 64000, 128000, 256000,
+        512000, 1024000, 2048000,
+      ].sort((a, b) => a - b),
+
+      uc3: [
+        10000, 20000, 4000, 8000, 16000, 32000, 64000, 128000, 256000,
+        512000, 1024000, 2048000,
+      ].sort((a, b) => a - b),
+
+      uc4: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].sort((a, b) => a - b),
+    };
     fetch("./results.json")
       .then((response) => response.json())
       .then((data) => {
-        const benchmarks = ["uc1", "uc2", "uc3"];
-        const partitions = [40, 160, 400, 1600];
-        const systems = ["beam-flink", "beam-samza", "flink", "kstreams"];
-        const loadValues = [
-          10000, 20000, 4000, 8000, 16000, 32000, 64000, 128000, 256000, 512000,
-          1024000, 2048000,
-        ].sort((a, b) => a - b);
         for (const uc of benchmarks) {
           const h3 = document.createElement("h3");
-          h3.innerText = `${uc.toUpperCase()} results`;
+          h3.innerText = `${uc.toUpperCase()} minimum machine results`;
           document.body.append(h3);
           for (const system of systems) {
             const traces = [];
@@ -39,29 +59,32 @@
             const div = document.createElement("div");
             div.id = `plotly_${count}`;
             document.body.appendChild(div);
-            for (const partition of partitions) {
+            for (const partition of partitions[uc]) {
               if (!data[`${uc}-${system}`][partition]) {
                 continue;
               }
               const values = data[`${uc}-${system}`][partition];
               let yValues = null;
-              try {
-                yValues = loadValues.map(
-                  (value) =>
-                    values[value].reduce((a, b) => a + b) / values[value].length
-                );
-              } catch (_) {
-                continue;
-              }
+
+                yValues = loadValues[uc].map(
+                  (value) => {
+                      if (values[value]){
+                          return values[value].reduce((a, b) => a + b) / values[value].length
+                      } else {
+                        return null
+                      }
+                  }
+                )
+                
               traces.push({
-                x: loadValues,
+                x: loadValues[uc],
                 y: yValues,
                 type: "scatter",
                 name: partition,
               });
             }
             Plotly.newPlot(div.id, traces, {
-              width: 800,
+              width: 400,
               height: 400,
               title: {
                 text: `${uc.toUpperCase()} ${systems_name[system]}`,
@@ -72,7 +95,10 @@
                 title: {
                   text: "Load values",
                 },
-                range: [loadValues[0], loadValues[loadValues.length - 1]],
+                range: [
+                  loadValues[uc][0],
+                  loadValues[uc][loadValues[uc].length - 1],
+                ],
               },
               yaxis: {
                 title: {
@@ -88,9 +114,9 @@
 
         for (const uc of benchmarks) {
           const h3 = document.createElement("h3");
-          h3.innerText = `${uc.toUpperCase()} comparatives`;
+          h3.innerText = `${uc.toUpperCase()} minimum machine comparatives`;
           document.body.append(h3);
-          for (const partition of partitions) {
+          for (const partition of partitions[uc]) {
             const traces = [];
             const div = document.createElement("div");
             div.id = `plotly_${count}`;
@@ -105,7 +131,7 @@
               const values = data[`${uc}-${system}`][partition];
               let yValues = null;
               try {
-                yValues = loadValues.map(
+                yValues = loadValues[uc].map(
                   (value) =>
                     values[value].reduce((a, b) => a + b) / values[value].length
                 );
@@ -113,14 +139,14 @@
                 continue;
               }
               traces.push({
-                x: loadValues,
+                x: loadValues[uc],
                 y: yValues,
                 type: "scatter",
                 name: systems_name[system],
               });
             }
             Plotly.newPlot(div.id, traces, {
-              width: 800,
+              width: 400,
               height: 400,
               title: {
                 text: `${uc.toUpperCase()} ${partition} partitions`,
@@ -131,7 +157,10 @@
                 title: {
                   text: "Load values",
                 },
-                range: [loadValues[0], loadValues[loadValues.length - 1]],
+                range: [
+                  loadValues[uc][0],
+                  loadValues[uc][loadValues[uc].length - 1],
+                ],
               },
               yaxis: {
                 title: {
@@ -144,6 +173,119 @@
           }
           document.body.append(document.createElement("hr"));
         }
+        fetchTimes();
       });
+    function fetchTimes() {
+      fetch("./results-times.json")
+        .then((response) => response.json())
+        .then((data) => {
+          for (const uc of benchmarks) {
+            const h3 = document.createElement("h3");
+            h3.innerText = `${uc.toUpperCase()} average time to run`;
+            document.body.append(h3);
+            for (const system of systems) {
+              if (!data[`${uc}-${system}`]) {
+                continue;
+              }
+              const x = [];
+              const y = [];
+              const div = document.createElement("div");
+              div.id = `plotly_${count}`;
+              document.body.appendChild(div);
+              for (const partition of partitions[uc]) {
+                if (!data[`${uc}-${system}`][partition]) {
+                  continue;
+                }
+                const values = data[`${uc}-${system}`][partition];
+                x.push(`P ${partition}`);
+                y.push(values.reduce((a, b) => a + b) / values.length);
+              }
+              Plotly.newPlot(
+                div.id,
+                [
+                  {
+                    x,
+                    y,
+                    type: "bar",
+                  },
+                ],
+                {
+                  width: 400,
+                  height: 400,
+                  title: {
+                    text: `${uc.toUpperCase()} ${systems_name[system]}`,
+                    xref: "paper",
+                  },
+                  xaxis: {
+                    title: {
+                      text: "Partitions",
+                    },
+                  },
+                  yaxis: {
+                    title: {
+                      text: "Seconds",
+                    },
+                  },
+                }
+              );
+              count += 1;
+            }
+            document.body.append(document.createElement("hr"));
+          }
+          for (const uc of benchmarks) {
+            const h3 = document.createElement("h3");
+            h3.innerText = `${uc.toUpperCase()} average comparatives time to run`;
+            document.body.append(h3);
+            for (const partition of partitions[uc]) {
+              const x = [];
+              const y = [];
+              const div = document.createElement("div");
+              div.id = `plotly_${count}`;
+              document.body.appendChild(div);
+              for (const system of systems) {
+                if (
+                  !data[`${uc}-${system}`] ||
+                  !data[`${uc}-${system}`][partition]
+                ) {
+                  continue;
+                }
+                const values = data[`${uc}-${system}`][partition];
+                x.push(systems_name[system]);
+                y.push(values.reduce((a, b) => a + b) / values.length);
+              }
+              Plotly.newPlot(
+                div.id,
+                [
+                  {
+                    x,
+                    y,
+                    type: "bar",
+                  },
+                ],
+                {
+                  width: 400,
+                  height: 400,
+                  title: {
+                    text: `${uc.toUpperCase()} ${partition} partitions times`,
+                    xref: "paper",
+                  },
+                  xaxis: {
+                    title: {
+                      text: "System",
+                    },
+                  },
+                  yaxis: {
+                    title: {
+                      text: "Seconds",
+                    },
+                  },
+                }
+              );
+              count += 1;
+            }
+            document.body.append(document.createElement("hr"));
+          }
+        });
+    }
   </script>
 </body>
