@@ -1,5 +1,5 @@
 {
-  "name": "uc4-beam-samza",
+  "name": "uc4-beam-samza-160",
   "resourceTypes": [
     {
       "typeName": "Instances",
@@ -41,7 +41,7 @@
       {
         "name": "input",
         "numPartitions$delegate": {
-          "value": 40
+          "value": 160
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -53,7 +53,7 @@
       {
         "name": "output",
         "numPartitions$delegate": {
-          "value": 40
+          "value": 160
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -65,7 +65,7 @@
       {
         "name": "configuration",
         "numPartitions$delegate": {
-          "value": 40
+          "value": 160
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -77,7 +77,7 @@
       {
         "name": "aggregation-feedback",
         "numPartitions$delegate": {
-          "value": 40
+          "value": 160
         },
         "replicationFactor$delegate": {
           "value": 1

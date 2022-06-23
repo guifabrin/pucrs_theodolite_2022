@@ -1,29 +1,13 @@
 {
-  "name": "uc4-beam-flink-400",
+  "name": "uc4-beam-samza",
   "resourceTypes": [
     {
       "typeName": "Instances",
       "patchers": [
         {
           "type": "ReplicaPatcher",
-          "resource": "taskmanager-deployment.yaml",
+          "resource": "uc4-beam-samza-deployment.yaml",
           "properties": {}
-        },
-        {
-          "type": "EnvVarPatcher",
-          "resource": "jobmanager-deployment.yaml",
-          "properties": {
-            "container": "jobmanager",
-            "variableName": "PARALLELISM"
-          }
-        },
-        {
-          "type": "EnvVarPatcher",
-          "resource": "taskmanager-deployment.yaml",
-          "properties": {
-            "container": "taskmanager",
-            "variableName": "PARALLELISM"
-          }
         }
       ]
     }
@@ -57,7 +41,7 @@
       {
         "name": "input",
         "numPartitions$delegate": {
-          "value": 400
+          "value": 40
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -69,7 +53,7 @@
       {
         "name": "output",
         "numPartitions$delegate": {
-          "value": 400
+          "value": 40
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -81,7 +65,7 @@
       {
         "name": "configuration",
         "numPartitions$delegate": {
-          "value": 400
+          "value": 40
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -93,7 +77,7 @@
       {
         "name": "aggregation-feedback",
         "numPartitions$delegate": {
-          "value": 400
+          "value": 40
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -104,6 +88,30 @@
       },
       {
         "name": "theodolite-.*",
+        "numPartitions$delegate": {
+          "value": 0
+        },
+        "replicationFactor$delegate": {
+          "value": 0
+        },
+        "removeOnly$delegate": {
+          "state": true
+        }
+      },
+      {
+        "name": ".*samza.*",
+        "numPartitions$delegate": {
+          "value": 0
+        },
+        "replicationFactor$delegate": {
+          "value": 0
+        },
+        "removeOnly$delegate": {
+          "state": true
+        }
+      },
+      {
+        "name": ".*uc4-application.*",
         "numPartitions$delegate": {
           "value": 0
         },
@@ -125,20 +133,36 @@
     "resources": [
       {
         "configMap": {
-          "name": "benchmark-resources-uc4-beam-flink",
+          "name": "benchmark-resources-uc4-beam-samza",
           "files": [
-            "flink-configuration-configmap.yaml",
-            "taskmanager-deployment.yaml",
-            "taskmanager-service.yaml",
-            "service-monitor.yaml",
-            "jobmanager-service.yaml",
-            "jobmanager-deployment.yaml"
+            "uc4-beam-samza-deployment.yaml",
+            "beam-samza-service.yaml",
+            "service-monitor.yaml"
           ]
         }
       }
     ],
     "beforeActions": [],
-    "afterActions": []
+    "afterActions": [
+      {
+        "selector": {
+          "pod": {
+            "matchLabels": {
+              "app": "zookeeper-client"
+            }
+          },
+          "container": "zookeeper-client"
+        },
+        "exec": {
+          "command": [
+            "bash",
+            "-c",
+            "bin/zkCli.sh -server $ZOOKEEPER_SERVER deleteall /app-theodolite-uc4-application-1"
+          ],
+          "timeoutSeconds": 60
+        }
+      }
+    ]
   },
   "loadGenerator": {
     "resources": [

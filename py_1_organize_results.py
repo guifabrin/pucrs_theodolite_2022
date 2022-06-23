@@ -7,18 +7,31 @@ temp_dir = './temp'
 docs_dir = './docs'
 results_dir = './results'
 
-exp_actual = get_total_experiments()
-total_exp = get_total_experiments(temp_dir)
-
-for experiment_id in range(0, total_exp + 1):
-    try:
-        for file in get_experiment_files(experiment_id, temp_dir):
-            actual_file = '{}/{}'.format(temp_dir, file)
-            new_file = '{}/{}'.format(results_dir, file.replace('exp{}_'.format(experiment_id), 'exp{}_'.format(exp_actual)).replace('exp{}-'.format(experiment_id), 'exp{}-'.format(exp_actual)))
-            rename(actual_file, new_file)
+exp_actual = 0
+for experiment_id in range(0, get_total_experiments()):
+    files = get_experiment_files(experiment_id)
+    if len(files) == 0:
+        continue
+    if experiment_id == exp_actual:
         exp_actual += 1
-    except:
-        pass
+        continue
+    print('Moving experiment:', experiment_id,'to', exp_actual)
+    for file in files:
+        actual_file = '{}/{}'.format(results_dir, file)
+        new_file = '{}/{}'.format(results_dir, file.replace('exp{}_'.format(experiment_id), 'exp{}_'.format(exp_actual)).replace('exp{}-'.format(experiment_id), 'exp{}-'.format(exp_actual)))
+        rename(actual_file, new_file)
+    exp_actual += 1
+
+for experiment_id in range(0, get_total_experiments(temp_dir)):
+    files = get_experiment_files(experiment_id, temp_dir)
+    if len(files) == 0:
+        continue
+    print('Moving experiment:', experiment_id, 'to', exp_actual)
+    for file in get_experiment_files(experiment_id, temp_dir):
+        actual_file = '{}/{}'.format(temp_dir, file)
+        new_file = '{}/{}'.format(results_dir, file.replace('exp{}_'.format(experiment_id), 'exp{}_'.format(exp_actual)).replace('exp{}-'.format(experiment_id), 'exp{}-'.format(exp_actual)))
+        rename(actual_file, new_file)
+    exp_actual += 1
 
 f = open("{}/expID.txt".format(results_dir), "w")
 f.write(str(exp_actual))

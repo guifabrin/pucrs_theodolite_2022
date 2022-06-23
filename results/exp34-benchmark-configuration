@@ -1,29 +1,13 @@
 {
-  "name": "uc3-flink-160",
+  "name": "uc3-kstreams",
   "resourceTypes": [
     {
       "typeName": "Instances",
       "patchers": [
         {
           "type": "ReplicaPatcher",
-          "resource": "taskmanager-deployment.yaml",
+          "resource": "uc3-kstreams-deployment.yaml",
           "properties": {}
-        },
-        {
-          "type": "EnvVarPatcher",
-          "resource": "jobmanager-deployment.yaml",
-          "properties": {
-            "container": "jobmanager",
-            "variableName": "PARALLELISM"
-          }
-        },
-        {
-          "type": "EnvVarPatcher",
-          "resource": "taskmanager-deployment.yaml",
-          "properties": {
-            "container": "taskmanager",
-            "variableName": "PARALLELISM"
-          }
         }
       ]
     }
@@ -56,7 +40,7 @@
       {
         "name": "input",
         "numPartitions$delegate": {
-          "value": 160
+          "value": 40
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -68,7 +52,7 @@
       {
         "name": "output",
         "numPartitions$delegate": {
-          "value": 160
+          "value": 40
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -100,14 +84,12 @@
     "resources": [
       {
         "configMap": {
-          "name": "benchmark-resources-uc3-flink",
+          "name": "benchmark-resources-uc3-kstreams",
           "files": [
-            "flink-configuration-configmap.yaml",
-            "taskmanager-deployment.yaml",
-            "taskmanager-service.yaml",
-            "service-monitor.yaml",
-            "jobmanager-service.yaml",
-            "jobmanager-deployment.yaml"
+            "uc3-kstreams-deployment.yaml",
+            "uc3-kstreams-service.yaml",
+            "uc3-jmx-configmap.yaml",
+            "uc3-service-monitor.yaml"
           ]
         }
       }

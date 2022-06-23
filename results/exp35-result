@@ -663,41 +663,6 @@
           ]
         }
       },
-      false
-    ],
-    [
-      {
-        "first": {
-          "number": 64000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc3-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc3-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 8,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "uc3-kstreams-deployment.yaml",
-              "properties": {}
-            }
-          ]
-        }
-      },
       true
     ],
     [
@@ -723,7 +688,42 @@
           ]
         },
         "second": {
-          "number": 6,
+          "number": 2,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc3-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 64000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc3-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc3-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 1,
           "type": [
             {
               "type": "ReplicaPatcher",
@@ -803,7 +803,7 @@
           ]
         }
       },
-      true
+      false
     ],
     [
       {
@@ -828,7 +828,7 @@
           ]
         },
         "second": {
-          "number": 1,
+          "number": 3,
           "type": [
             {
               "type": "ReplicaPatcher",
@@ -873,7 +873,7 @@
           ]
         }
       },
-      false
+      true
     ],
     [
       {
@@ -898,7 +898,7 @@
           ]
         },
         "second": {
-          "number": 8,
+          "number": 2,
           "type": [
             {
               "type": "ReplicaPatcher",
@@ -933,7 +933,7 @@
           ]
         },
         "second": {
-          "number": 6,
+          "number": 1,
           "type": [
             {
               "type": "ReplicaPatcher",
@@ -943,42 +943,7 @@
           ]
         }
       },
-      false
-    ],
-    [
-      {
-        "first": {
-          "number": 256000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc3-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc3-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 7,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "uc3-kstreams-deployment.yaml",
-              "properties": {}
-            }
-          ]
-        }
-      },
-      false
+      true
     ],
     [
       {
@@ -1083,7 +1048,7 @@
           ]
         }
       },
-      false
+      true
     ],
     [
       {
@@ -1188,7 +1153,7 @@
           ]
         }
       },
-      false
+      true
     ],
     [
       {

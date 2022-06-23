@@ -1,34 +1,51 @@
 {
-  "name": "uc2-beam-samza",
+  "name": "uc4-flink-160",
   "resourceTypes": [
     {
       "typeName": "Instances",
       "patchers": [
         {
           "type": "ReplicaPatcher",
-          "resource": "uc2-beam-samza-deployment.yaml",
+          "resource": "taskmanager-deployment.yaml",
           "properties": {}
+        },
+        {
+          "type": "EnvVarPatcher",
+          "resource": "jobmanager-deployment.yaml",
+          "properties": {
+            "container": "jobmanager",
+            "variableName": "PARALLELISM"
+          }
+        },
+        {
+          "type": "EnvVarPatcher",
+          "resource": "taskmanager-deployment.yaml",
+          "properties": {
+            "container": "taskmanager",
+            "variableName": "PARALLELISM"
+          }
         }
       ]
     }
   ],
   "loadTypes": [
     {
-      "typeName": "NumSensors",
+      "typeName": "NumNestedGroups",
       "patchers": [
         {
           "type": "EnvVarPatcher",
-          "resource": "uc2-load-generator-deployment.yaml",
+          "resource": "uc4-load-generator-deployment.yaml",
           "properties": {
             "container": "workload-generator",
-            "variableName": "NUM_SENSORS"
+            "variableName": "NUM_NESTED_GROUPS"
           }
         },
         {
-          "type": "NumSensorsLoadGeneratorReplicaPatcher",
-          "resource": "uc2-load-generator-deployment.yaml",
+          "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+          "resource": "uc4-load-generator-deployment.yaml",
           "properties": {
-            "loadGenMaxRecords": "150000"
+            "loadGenMaxRecords": "150000",
+            "numSensors": "4.0"
           }
         }
       ]
@@ -40,7 +57,7 @@
       {
         "name": "input",
         "numPartitions$delegate": {
-          "value": 40
+          "value": 160
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -52,7 +69,7 @@
       {
         "name": "output",
         "numPartitions$delegate": {
-          "value": 40
+          "value": 160
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -62,19 +79,31 @@
         }
       },
       {
-        "name": ".*samza.*",
+        "name": "configuration",
         "numPartitions$delegate": {
-          "value": 0
+          "value": 160
         },
         "replicationFactor$delegate": {
-          "value": 0
+          "value": 1
         },
         "removeOnly$delegate": {
-          "state": true
+          "state": false
         }
       },
       {
-        "name": ".*uc2-application.*",
+        "name": "aggregation-feedback",
+        "numPartitions$delegate": {
+          "value": 160
+        },
+        "replicationFactor$delegate": {
+          "value": 1
+        },
+        "removeOnly$delegate": {
+          "state": false
+        }
+      },
+      {
+        "name": "theodolite-.*",
         "numPartitions$delegate": {
           "value": 0
         },
@@ -96,45 +125,29 @@
     "resources": [
       {
         "configMap": {
-          "name": "benchmark-resources-uc2-beam-samza",
+          "name": "benchmark-resources-uc4-flink",
           "files": [
-            "uc2-beam-samza-deployment.yaml",
-            "beam-samza-service.yaml",
-            "service-monitor.yaml"
+            "flink-configuration-configmap.yaml",
+            "taskmanager-deployment.yaml",
+            "taskmanager-service.yaml",
+            "service-monitor.yaml",
+            "jobmanager-service.yaml",
+            "jobmanager-deployment.yaml"
           ]
         }
       }
     ],
     "beforeActions": [],
-    "afterActions": [
-      {
-        "selector": {
-          "pod": {
-            "matchLabels": {
-              "app": "zookeeper-client"
-            }
-          },
-          "container": "zookeeper-client"
-        },
-        "exec": {
-          "command": [
-            "bash",
-            "-c",
-            "bin/zkCli.sh -server $ZOOKEEPER_SERVER deleteall /app-theodolite-uc2-application-1"
-          ],
-          "timeoutSeconds": 60
-        }
-      }
-    ]
+    "afterActions": []
   },
   "loadGenerator": {
     "resources": [
       {
         "configMap": {
-          "name": "benchmark-resources-uc2-load-generator",
+          "name": "benchmark-resources-uc4-load-generator",
           "files": [
-            "uc2-load-generator-deployment.yaml",
-            "uc2-load-generator-service.yaml"
+            "uc4-load-generator-deployment.yaml",
+            "uc4-load-generator-service.yaml"
           ]
         }
       }

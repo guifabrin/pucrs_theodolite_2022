@@ -1,19 +1,22 @@
 {
-  "executionId": 12,
-  "name": "uc4-beam-samza-lag-trend-binary-search-uc1-beam-samza-400",
-  "benchmark": "uc4-beam-samza-400",
+  "executionId": 0,
+  "name": "uc2-beam-flink-lag-trend-binary-search-taskmanager",
+  "benchmark": "uc2-beam-flink",
   "load": {
-    "loadType": "NumNestedGroups",
+    "loadType": "NumSensors",
     "loadValues": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
+      10000,
+      20000,
+      4000,
+      8000,
+      16000,
+      32000,
+      64000,
+      128000,
+      256000,
+      512000,
+      1024000,
+      2048000
     ]
   },
   "resources": {
@@ -33,7 +36,7 @@
   },
   "slos": [
     {
-      "sloType": "beam-samza",
+      "sloType": "lag trend",
       "prometheusUrl": "http://prometheus-operated:9090",
       "offset$delegate": {
         "value": 0
@@ -61,12 +64,32 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "beam-samza-service.yaml",
+        "resource": "flink-configuration-configmap.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc4-beam-samza-lag-trend-binary-search-uc1-beam-samza-400"
+      "value": "uc2-beam-flink-lag-trend-binary-search-taskmanager"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "jobmanager-deployment.yaml",
+        "properties": {
+          "variableName": "deployed-for-execution"
+        }
+      },
+      "value": "uc2-beam-flink-lag-trend-binary-search-taskmanager"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "jobmanager-service.yaml",
+        "properties": {
+          "variableName": "deployed-for-execution"
+        }
+      },
+      "value": "uc2-beam-flink-lag-trend-binary-search-taskmanager"
     },
     {
       "patcher": {
@@ -76,47 +99,77 @@
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc4-beam-samza-lag-trend-binary-search-uc1-beam-samza-400"
+      "value": "uc2-beam-flink-lag-trend-binary-search-taskmanager"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc4-beam-samza-deployment.yaml",
+        "resource": "taskmanager-deployment.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc4-beam-samza-lag-trend-binary-search-uc1-beam-samza-400"
+      "value": "uc2-beam-flink-lag-trend-binary-search-taskmanager"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc4-load-generator-deployment.yaml",
+        "resource": "taskmanager-service.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc4-beam-samza-lag-trend-binary-search-uc1-beam-samza-400"
+      "value": "uc2-beam-flink-lag-trend-binary-search-taskmanager"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc4-load-generator-service.yaml",
+        "resource": "uc2-load-generator-deployment.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc4-beam-samza-lag-trend-binary-search-uc1-beam-samza-400"
+      "value": "uc2-beam-flink-lag-trend-binary-search-taskmanager"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "beam-samza-service.yaml",
+        "resource": "uc2-load-generator-service.yaml",
+        "properties": {
+          "variableName": "deployed-for-execution"
+        }
+      },
+      "value": "uc2-beam-flink-lag-trend-binary-search-taskmanager"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "flink-configuration-configmap.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc4-beam-samza-400"
+      "value": "uc2-beam-flink"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "jobmanager-deployment.yaml",
+        "properties": {
+          "variableName": "deployed-for-benchmark"
+        }
+      },
+      "value": "uc2-beam-flink"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "jobmanager-service.yaml",
+        "properties": {
+          "variableName": "deployed-for-benchmark"
+        }
+      },
+      "value": "uc2-beam-flink"
     },
     {
       "patcher": {
@@ -126,42 +179,72 @@
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc4-beam-samza-400"
+      "value": "uc2-beam-flink"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc4-beam-samza-deployment.yaml",
+        "resource": "taskmanager-deployment.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc4-beam-samza-400"
+      "value": "uc2-beam-flink"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc4-load-generator-deployment.yaml",
+        "resource": "taskmanager-service.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc4-beam-samza-400"
+      "value": "uc2-beam-flink"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc4-load-generator-service.yaml",
+        "resource": "uc2-load-generator-deployment.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc4-beam-samza-400"
+      "value": "uc2-beam-flink"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "beam-samza-service.yaml",
+        "resource": "uc2-load-generator-service.yaml",
+        "properties": {
+          "variableName": "deployed-for-benchmark"
+        }
+      },
+      "value": "uc2-beam-flink"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "flink-configuration-configmap.yaml",
+        "properties": {
+          "variableName": "app.kubernetes.io/created-by"
+        }
+      },
+      "value": "theodolite"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "jobmanager-deployment.yaml",
+        "properties": {
+          "variableName": "app.kubernetes.io/created-by"
+        }
+      },
+      "value": "theodolite"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "jobmanager-service.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }
@@ -181,7 +264,7 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc4-beam-samza-deployment.yaml",
+        "resource": "taskmanager-deployment.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }
@@ -191,7 +274,7 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc4-load-generator-deployment.yaml",
+        "resource": "taskmanager-service.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }
@@ -201,7 +284,17 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc4-load-generator-service.yaml",
+        "resource": "uc2-load-generator-deployment.yaml",
+        "properties": {
+          "variableName": "app.kubernetes.io/created-by"
+        }
+      },
+      "value": "theodolite"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc2-load-generator-service.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }

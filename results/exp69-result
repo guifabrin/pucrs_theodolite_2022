@@ -3,21 +3,22 @@
     [
       {
         "first": {
-          "number": 4000,
+          "number": 1,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -27,24 +28,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -54,21 +39,22 @@
     [
       {
         "first": {
-          "number": 4000,
+          "number": 1,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -78,24 +64,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -105,21 +75,22 @@
     [
       {
         "first": {
-          "number": 4000,
+          "number": 1,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -129,48 +100,33 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
         "first": {
-          "number": 8000,
+          "number": 2,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -180,24 +136,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -207,21 +147,22 @@
     [
       {
         "first": {
-          "number": 8000,
+          "number": 2,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -231,24 +172,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -258,21 +183,22 @@
     [
       {
         "first": {
-          "number": 8000,
+          "number": 2,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -282,48 +208,33 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
         "first": {
-          "number": 10000,
+          "number": 3,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -333,24 +244,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -360,21 +255,22 @@
     [
       {
         "first": {
-          "number": 10000,
+          "number": 3,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -384,24 +280,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -411,21 +291,22 @@
     [
       {
         "first": {
-          "number": 10000,
+          "number": 3,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -435,48 +316,33 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
         "first": {
-          "number": 16000,
+          "number": 4,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -486,24 +352,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -513,21 +363,22 @@
     [
       {
         "first": {
-          "number": 16000,
+          "number": 4,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -537,24 +388,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -564,21 +399,22 @@
     [
       {
         "first": {
-          "number": 16000,
+          "number": 4,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -588,48 +424,33 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
         "first": {
-          "number": 20000,
+          "number": 5,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -639,24 +460,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -666,21 +471,22 @@
     [
       {
         "first": {
-          "number": 20000,
+          "number": 5,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -690,24 +496,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -717,21 +507,22 @@
     [
       {
         "first": {
-          "number": 20000,
+          "number": 5,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -741,48 +532,33 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
         "first": {
-          "number": 32000,
+          "number": 6,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -792,24 +568,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -819,21 +579,22 @@
     [
       {
         "first": {
-          "number": 32000,
+          "number": 6,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -843,24 +604,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -870,21 +615,22 @@
     [
       {
         "first": {
-          "number": 32000,
+          "number": 6,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -894,48 +640,33 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
         "first": {
-          "number": 64000,
+          "number": 7,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -945,24 +676,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -972,21 +687,22 @@
     [
       {
         "first": {
-          "number": 64000,
+          "number": 7,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -996,24 +712,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1023,21 +723,22 @@
     [
       {
         "first": {
-          "number": 64000,
+          "number": 7,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -1047,48 +748,33 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
         "first": {
-          "number": 128000,
+          "number": 8,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -1098,24 +784,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1125,21 +795,22 @@
     [
       {
         "first": {
-          "number": 128000,
+          "number": 8,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -1149,24 +820,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1176,21 +831,22 @@
     [
       {
         "first": {
-          "number": 128000,
+          "number": 8,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -1200,48 +856,33 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
         "first": {
-          "number": 256000,
+          "number": 9,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -1251,24 +892,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1278,21 +903,22 @@
     [
       {
         "first": {
-          "number": 256000,
+          "number": 9,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -1302,24 +928,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1329,21 +939,22 @@
     [
       {
         "first": {
-          "number": 256000,
+          "number": 9,
           "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
                 "container": "workload-generator",
                 "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
+              "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+              "resource": "uc4-load-generator-deployment.yaml",
               "properties": {
-                "loadGenMaxRecords": "150000"
+                "loadGenMaxRecords": "150000",
+                "numSensors": "4.0"
               }
             }
           ]
@@ -1353,483 +964,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc4-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
-            }
-          ]
-        }
-      },
-      false
-    ],
-    [
-      {
-        "first": {
-          "number": 512000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 5,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
-            }
-          ]
-        }
-      },
-      true
-    ],
-    [
-      {
-        "first": {
-          "number": 512000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 2,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
-            }
-          ]
-        }
-      },
-      true
-    ],
-    [
-      {
-        "first": {
-          "number": 512000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 1,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
-            }
-          ]
-        }
-      },
-      false
-    ],
-    [
-      {
-        "first": {
-          "number": 1024000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 5,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
-            }
-          ]
-        }
-      },
-      true
-    ],
-    [
-      {
-        "first": {
-          "number": 1024000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 2,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
-            }
-          ]
-        }
-      },
-      true
-    ],
-    [
-      {
-        "first": {
-          "number": 1024000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 1,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
-            }
-          ]
-        }
-      },
-      false
-    ],
-    [
-      {
-        "first": {
-          "number": 2048000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 5,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
-            }
-          ]
-        }
-      },
-      true
-    ],
-    [
-      {
-        "first": {
-          "number": 2048000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 2,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
-            }
-          ]
-        }
-      },
-      true
-    ],
-    [
-      {
-        "first": {
-          "number": 2048000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc2-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 1,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }

@@ -1,12 +1,12 @@
 {
-  "name": "uc2-beam-samza-160",
+  "name": "uc4-kstreams-160",
   "resourceTypes": [
     {
       "typeName": "Instances",
       "patchers": [
         {
           "type": "ReplicaPatcher",
-          "resource": "uc2-beam-samza-deployment.yaml",
+          "resource": "uc4-kstreams-deployment.yaml",
           "properties": {}
         }
       ]
@@ -14,21 +14,22 @@
   ],
   "loadTypes": [
     {
-      "typeName": "NumSensors",
+      "typeName": "NumNestedGroups",
       "patchers": [
         {
           "type": "EnvVarPatcher",
-          "resource": "uc2-load-generator-deployment.yaml",
+          "resource": "uc4-load-generator-deployment.yaml",
           "properties": {
             "container": "workload-generator",
             "variableName": "NUM_SENSORS"
           }
         },
         {
-          "type": "NumSensorsLoadGeneratorReplicaPatcher",
-          "resource": "uc2-load-generator-deployment.yaml",
+          "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+          "resource": "uc4-load-generator-deployment.yaml",
           "properties": {
-            "loadGenMaxRecords": "150000"
+            "loadGenMaxRecords": "150000",
+            "numSensors": "4.0"
           }
         }
       ]
@@ -62,19 +63,31 @@
         }
       },
       {
-        "name": ".*samza.*",
+        "name": "configuration",
         "numPartitions$delegate": {
-          "value": 0
+          "value": 160
         },
         "replicationFactor$delegate": {
-          "value": 0
+          "value": 1
         },
         "removeOnly$delegate": {
-          "state": true
+          "state": false
         }
       },
       {
-        "name": ".*uc2-application.*",
+        "name": "aggregation-feedback",
+        "numPartitions$delegate": {
+          "value": 160
+        },
+        "replicationFactor$delegate": {
+          "value": 1
+        },
+        "removeOnly$delegate": {
+          "state": false
+        }
+      },
+      {
+        "name": "theodolite-.*",
         "numPartitions$delegate": {
           "value": 0
         },
@@ -96,45 +109,27 @@
     "resources": [
       {
         "configMap": {
-          "name": "benchmark-resources-uc2-beam-samza",
+          "name": "benchmark-resources-uc4-kstreams",
           "files": [
-            "uc2-beam-samza-deployment.yaml",
-            "beam-samza-service.yaml",
-            "service-monitor.yaml"
+            "uc4-kstreams-deployment.yaml",
+            "uc4-kstreams-service.yaml",
+            "uc4-jmx-configmap.yaml",
+            "uc4-service-monitor.yaml"
           ]
         }
       }
     ],
     "beforeActions": [],
-    "afterActions": [
-      {
-        "selector": {
-          "pod": {
-            "matchLabels": {
-              "app": "zookeeper-client"
-            }
-          },
-          "container": "zookeeper-client"
-        },
-        "exec": {
-          "command": [
-            "bash",
-            "-c",
-            "bin/zkCli.sh -server $ZOOKEEPER_SERVER deleteall /app-theodolite-uc2-application-1"
-          ],
-          "timeoutSeconds": 60
-        }
-      }
-    ]
+    "afterActions": []
   },
   "loadGenerator": {
     "resources": [
       {
         "configMap": {
-          "name": "benchmark-resources-uc2-load-generator",
+          "name": "benchmark-resources-uc4-load-generator",
           "files": [
-            "uc2-load-generator-deployment.yaml",
-            "uc2-load-generator-service.yaml"
+            "uc4-load-generator-deployment.yaml",
+            "uc4-load-generator-service.yaml"
           ]
         }
       }

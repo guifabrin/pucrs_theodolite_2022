@@ -27,24 +27,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -78,24 +62,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -129,24 +97,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -180,24 +132,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -231,24 +167,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -282,29 +202,13 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
@@ -333,24 +237,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -384,24 +272,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -435,29 +307,13 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
@@ -486,24 +342,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -537,24 +377,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -588,29 +412,13 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
@@ -639,24 +447,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -690,24 +482,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -741,29 +517,13 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
@@ -792,24 +552,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -843,24 +587,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -894,29 +622,13 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      false
+      true
     ],
     [
       {
@@ -945,131 +657,83 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
-            }
-          ]
-        }
-      },
-      true
-    ],
-    [
-      {
-        "first": {
-          "number": 64000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc3-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc3-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 2,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
-            }
-          ]
-        }
-      },
-      true
-    ],
-    [
-      {
-        "first": {
-          "number": 64000,
-          "type": [
-            {
-              "type": "EnvVarPatcher",
-              "resource": "uc3-load-generator-deployment.yaml",
-              "properties": {
-                "container": "workload-generator",
-                "variableName": "NUM_SENSORS"
-              }
-            },
-            {
-              "type": "NumSensorsLoadGeneratorReplicaPatcher",
-              "resource": "uc3-load-generator-deployment.yaml",
-              "properties": {
-                "loadGenMaxRecords": "150000"
-              }
-            }
-          ]
-        },
-        "second": {
-          "number": 1,
-          "type": [
-            {
-              "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
       false
+    ],
+    [
+      {
+        "first": {
+          "number": 64000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc3-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc3-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 8,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc3-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 64000,
+          "type": [
+            {
+              "type": "EnvVarPatcher",
+              "resource": "uc3-load-generator-deployment.yaml",
+              "properties": {
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
+              }
+            },
+            {
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc3-load-generator-deployment.yaml",
+              "properties": {
+                "loadGenMaxRecords": "150000"
+              }
+            }
+          ]
+        },
+        "second": {
+          "number": 6,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc3-kstreams-deployment.yaml",
+              "properties": {}
+            }
+          ]
+        }
+      },
+      true
     ],
     [
       {
@@ -1098,24 +762,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1149,24 +797,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1200,24 +832,43 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
+            }
+          ]
+        }
+      },
+      true
+    ],
+    [
+      {
+        "first": {
+          "number": 256000,
+          "type": [
             {
               "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
+              "resource": "uc3-load-generator-deployment.yaml",
               "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
+                "container": "workload-generator",
+                "variableName": "NUM_SENSORS"
               }
             },
             {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "type": "NumSensorsLoadGeneratorReplicaPatcher",
+              "resource": "uc3-load-generator-deployment.yaml",
               "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
+                "loadGenMaxRecords": "150000"
               }
+            }
+          ]
+        },
+        "second": {
+          "number": 5,
+          "type": [
+            {
+              "type": "ReplicaPatcher",
+              "resource": "uc3-kstreams-deployment.yaml",
+              "properties": {}
             }
           ]
         }
@@ -1247,28 +898,12 @@
           ]
         },
         "second": {
-          "number": 5,
+          "number": 8,
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1298,33 +933,17 @@
           ]
         },
         "second": {
-          "number": 2,
+          "number": 6,
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      true
+      false
     ],
     [
       {
@@ -1349,28 +968,12 @@
           ]
         },
         "second": {
-          "number": 1,
+          "number": 7,
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1404,24 +1007,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1455,24 +1042,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1506,29 +1077,13 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      true
+      false
     ],
     [
       {
@@ -1557,24 +1112,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1608,24 +1147,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1659,29 +1182,13 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
       },
-      true
+      false
     ],
     [
       {
@@ -1710,24 +1217,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1761,24 +1252,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }
@@ -1812,24 +1287,8 @@
           "type": [
             {
               "type": "ReplicaPatcher",
-              "resource": "taskmanager-deployment.yaml",
+              "resource": "uc3-kstreams-deployment.yaml",
               "properties": {}
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "jobmanager-deployment.yaml",
-              "properties": {
-                "container": "jobmanager",
-                "variableName": "PARALLELISM"
-              }
-            },
-            {
-              "type": "EnvVarPatcher",
-              "resource": "taskmanager-deployment.yaml",
-              "properties": {
-                "container": "taskmanager",
-                "variableName": "PARALLELISM"
-              }
             }
           ]
         }

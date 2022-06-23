@@ -1,34 +1,51 @@
 {
-  "name": "uc3-kstreams-160",
+  "name": "uc4-beam-flink",
   "resourceTypes": [
     {
       "typeName": "Instances",
       "patchers": [
         {
           "type": "ReplicaPatcher",
-          "resource": "uc3-kstreams-deployment.yaml",
+          "resource": "taskmanager-deployment.yaml",
           "properties": {}
+        },
+        {
+          "type": "EnvVarPatcher",
+          "resource": "jobmanager-deployment.yaml",
+          "properties": {
+            "container": "jobmanager",
+            "variableName": "PARALLELISM"
+          }
+        },
+        {
+          "type": "EnvVarPatcher",
+          "resource": "taskmanager-deployment.yaml",
+          "properties": {
+            "container": "taskmanager",
+            "variableName": "PARALLELISM"
+          }
         }
       ]
     }
   ],
   "loadTypes": [
     {
-      "typeName": "NumSensors",
+      "typeName": "NumNestedGroups",
       "patchers": [
         {
           "type": "EnvVarPatcher",
-          "resource": "uc3-load-generator-deployment.yaml",
+          "resource": "uc4-load-generator-deployment.yaml",
           "properties": {
             "container": "workload-generator",
-            "variableName": "NUM_SENSORS"
+            "variableName": "NUM_NESTED_GROUPS"
           }
         },
         {
-          "type": "NumSensorsLoadGeneratorReplicaPatcher",
-          "resource": "uc3-load-generator-deployment.yaml",
+          "type": "NumNestedGroupsLoadGeneratorReplicaPatcher",
+          "resource": "uc4-load-generator-deployment.yaml",
           "properties": {
-            "loadGenMaxRecords": "150000"
+            "loadGenMaxRecords": "150000",
+            "numSensors": "4.0"
           }
         }
       ]
@@ -40,7 +57,7 @@
       {
         "name": "input",
         "numPartitions$delegate": {
-          "value": 160
+          "value": 40
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -52,7 +69,31 @@
       {
         "name": "output",
         "numPartitions$delegate": {
-          "value": 160
+          "value": 40
+        },
+        "replicationFactor$delegate": {
+          "value": 1
+        },
+        "removeOnly$delegate": {
+          "state": false
+        }
+      },
+      {
+        "name": "configuration",
+        "numPartitions$delegate": {
+          "value": 40
+        },
+        "replicationFactor$delegate": {
+          "value": 1
+        },
+        "removeOnly$delegate": {
+          "state": false
+        }
+      },
+      {
+        "name": "aggregation-feedback",
+        "numPartitions$delegate": {
+          "value": 40
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -84,12 +125,14 @@
     "resources": [
       {
         "configMap": {
-          "name": "benchmark-resources-uc3-kstreams",
+          "name": "benchmark-resources-uc4-beam-flink",
           "files": [
-            "uc3-kstreams-deployment.yaml",
-            "uc3-kstreams-service.yaml",
-            "uc3-jmx-configmap.yaml",
-            "uc3-service-monitor.yaml"
+            "flink-configuration-configmap.yaml",
+            "taskmanager-deployment.yaml",
+            "taskmanager-service.yaml",
+            "service-monitor.yaml",
+            "jobmanager-service.yaml",
+            "jobmanager-deployment.yaml"
           ]
         }
       }
@@ -101,10 +144,10 @@
     "resources": [
       {
         "configMap": {
-          "name": "benchmark-resources-uc3-load-generator",
+          "name": "benchmark-resources-uc4-load-generator",
           "files": [
-            "uc3-load-generator-deployment.yaml",
-            "uc3-load-generator-service.yaml"
+            "uc4-load-generator-deployment.yaml",
+            "uc4-load-generator-service.yaml"
           ]
         }
       }

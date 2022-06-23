@@ -1,29 +1,13 @@
 {
-  "name": "uc2-beam-flink-160",
+  "name": "uc3-beam-samza",
   "resourceTypes": [
     {
       "typeName": "Instances",
       "patchers": [
         {
           "type": "ReplicaPatcher",
-          "resource": "taskmanager-deployment.yaml",
+          "resource": "uc3-beam-samza-deployment.yaml",
           "properties": {}
-        },
-        {
-          "type": "EnvVarPatcher",
-          "resource": "jobmanager-deployment.yaml",
-          "properties": {
-            "container": "jobmanager",
-            "variableName": "PARALLELISM"
-          }
-        },
-        {
-          "type": "EnvVarPatcher",
-          "resource": "taskmanager-deployment.yaml",
-          "properties": {
-            "container": "taskmanager",
-            "variableName": "PARALLELISM"
-          }
         }
       ]
     }
@@ -34,7 +18,7 @@
       "patchers": [
         {
           "type": "EnvVarPatcher",
-          "resource": "uc2-load-generator-deployment.yaml",
+          "resource": "uc3-load-generator-deployment.yaml",
           "properties": {
             "container": "workload-generator",
             "variableName": "NUM_SENSORS"
@@ -42,7 +26,7 @@
         },
         {
           "type": "NumSensorsLoadGeneratorReplicaPatcher",
-          "resource": "uc2-load-generator-deployment.yaml",
+          "resource": "uc3-load-generator-deployment.yaml",
           "properties": {
             "loadGenMaxRecords": "150000"
           }
@@ -56,7 +40,7 @@
       {
         "name": "input",
         "numPartitions$delegate": {
-          "value": 160
+          "value": 40
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -68,7 +52,7 @@
       {
         "name": "output",
         "numPartitions$delegate": {
-          "value": 160
+          "value": 40
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -78,7 +62,19 @@
         }
       },
       {
-        "name": "theodolite-.*",
+        "name": ".*samza.*",
+        "numPartitions$delegate": {
+          "value": 0
+        },
+        "replicationFactor$delegate": {
+          "value": 0
+        },
+        "removeOnly$delegate": {
+          "state": true
+        }
+      },
+      {
+        "name": ".*uc3-application.*",
         "numPartitions$delegate": {
           "value": 0
         },
@@ -100,29 +96,45 @@
     "resources": [
       {
         "configMap": {
-          "name": "benchmark-resources-uc2-beam-flink",
+          "name": "benchmark-resources-uc3-beam-samza",
           "files": [
-            "flink-configuration-configmap.yaml",
-            "taskmanager-deployment.yaml",
-            "taskmanager-service.yaml",
-            "service-monitor.yaml",
-            "jobmanager-service.yaml",
-            "jobmanager-deployment.yaml"
+            "uc3-beam-samza-deployment.yaml",
+            "beam-samza-service.yaml",
+            "service-monitor.yaml"
           ]
         }
       }
     ],
     "beforeActions": [],
-    "afterActions": []
+    "afterActions": [
+      {
+        "selector": {
+          "pod": {
+            "matchLabels": {
+              "app": "zookeeper-client"
+            }
+          },
+          "container": "zookeeper-client"
+        },
+        "exec": {
+          "command": [
+            "bash",
+            "-c",
+            "bin/zkCli.sh -server $ZOOKEEPER_SERVER deleteall /app-theodolite-uc3-application-1"
+          ],
+          "timeoutSeconds": 60
+        }
+      }
+    ]
   },
   "loadGenerator": {
     "resources": [
       {
         "configMap": {
-          "name": "benchmark-resources-uc2-load-generator",
+          "name": "benchmark-resources-uc3-load-generator",
           "files": [
-            "uc2-load-generator-deployment.yaml",
-            "uc2-load-generator-service.yaml"
+            "uc3-load-generator-deployment.yaml",
+            "uc3-load-generator-service.yaml"
           ]
         }
       }

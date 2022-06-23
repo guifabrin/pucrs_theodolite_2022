@@ -1,7 +1,7 @@
 {
-  "executionId": 4,
-  "name": "uc3-flink-lag-trend-binary-search-taskmanager-160",
-  "benchmark": "uc3-flink-160",
+  "executionId": 5,
+  "name": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams",
+  "benchmark": "uc3-kstreams",
   "load": {
     "loadType": "NumSensors",
     "loadValues": [
@@ -64,62 +64,42 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "flink-configuration-configmap.yaml",
+        "resource": "uc3-jmx-configmap.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc3-flink-lag-trend-binary-search-taskmanager-160"
+      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "jobmanager-deployment.yaml",
+        "resource": "uc3-kstreams-deployment.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc3-flink-lag-trend-binary-search-taskmanager-160"
+      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "jobmanager-service.yaml",
+        "resource": "uc3-kstreams-service.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc3-flink-lag-trend-binary-search-taskmanager-160"
+      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "service-monitor.yaml",
+        "resource": "uc3-service-monitor.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc3-flink-lag-trend-binary-search-taskmanager-160"
-    },
-    {
-      "patcher": {
-        "type": "LabelPatcher",
-        "resource": "taskmanager-deployment.yaml",
-        "properties": {
-          "variableName": "deployed-for-execution"
-        }
-      },
-      "value": "uc3-flink-lag-trend-binary-search-taskmanager-160"
-    },
-    {
-      "patcher": {
-        "type": "LabelPatcher",
-        "resource": "taskmanager-service.yaml",
-        "properties": {
-          "variableName": "deployed-for-execution"
-        }
-      },
-      "value": "uc3-flink-lag-trend-binary-search-taskmanager-160"
+      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams"
     },
     {
       "patcher": {
@@ -129,7 +109,7 @@
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc3-flink-lag-trend-binary-search-taskmanager-160"
+      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams"
     },
     {
       "patcher": {
@@ -139,67 +119,47 @@
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc3-flink-lag-trend-binary-search-taskmanager-160"
+      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "flink-configuration-configmap.yaml",
+        "resource": "uc3-jmx-configmap.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc3-flink-160"
+      "value": "uc3-kstreams"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "jobmanager-deployment.yaml",
+        "resource": "uc3-kstreams-deployment.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc3-flink-160"
+      "value": "uc3-kstreams"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "jobmanager-service.yaml",
+        "resource": "uc3-kstreams-service.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc3-flink-160"
+      "value": "uc3-kstreams"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "service-monitor.yaml",
+        "resource": "uc3-service-monitor.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc3-flink-160"
-    },
-    {
-      "patcher": {
-        "type": "LabelPatcher",
-        "resource": "taskmanager-deployment.yaml",
-        "properties": {
-          "variableName": "deployed-for-benchmark"
-        }
-      },
-      "value": "uc3-flink-160"
-    },
-    {
-      "patcher": {
-        "type": "LabelPatcher",
-        "resource": "taskmanager-service.yaml",
-        "properties": {
-          "variableName": "deployed-for-benchmark"
-        }
-      },
-      "value": "uc3-flink-160"
+      "value": "uc3-kstreams"
     },
     {
       "patcher": {
@@ -209,7 +169,7 @@
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc3-flink-160"
+      "value": "uc3-kstreams"
     },
     {
       "patcher": {
@@ -219,12 +179,12 @@
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc3-flink-160"
+      "value": "uc3-kstreams"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "flink-configuration-configmap.yaml",
+        "resource": "uc3-jmx-configmap.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }
@@ -234,7 +194,7 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "jobmanager-deployment.yaml",
+        "resource": "uc3-kstreams-deployment.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }
@@ -244,7 +204,7 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "jobmanager-service.yaml",
+        "resource": "uc3-kstreams-service.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }
@@ -254,27 +214,7 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "service-monitor.yaml",
-        "properties": {
-          "variableName": "app.kubernetes.io/created-by"
-        }
-      },
-      "value": "theodolite"
-    },
-    {
-      "patcher": {
-        "type": "LabelPatcher",
-        "resource": "taskmanager-deployment.yaml",
-        "properties": {
-          "variableName": "app.kubernetes.io/created-by"
-        }
-      },
-      "value": "theodolite"
-    },
-    {
-      "patcher": {
-        "type": "LabelPatcher",
-        "resource": "taskmanager-service.yaml",
+        "resource": "uc3-service-monitor.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }

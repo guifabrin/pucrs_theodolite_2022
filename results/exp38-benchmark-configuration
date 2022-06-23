@@ -1,5 +1,5 @@
 {
-  "name": "uc4-beam-flink-160",
+  "name": "uc4-beam-flink-400",
   "resourceTypes": [
     {
       "typeName": "Instances",
@@ -57,7 +57,7 @@
       {
         "name": "input",
         "numPartitions$delegate": {
-          "value": 160
+          "value": 400
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -69,7 +69,7 @@
       {
         "name": "output",
         "numPartitions$delegate": {
-          "value": 160
+          "value": 400
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -81,7 +81,7 @@
       {
         "name": "configuration",
         "numPartitions$delegate": {
-          "value": 160
+          "value": 400
         },
         "replicationFactor$delegate": {
           "value": 1
@@ -93,7 +93,7 @@
       {
         "name": "aggregation-feedback",
         "numPartitions$delegate": {
-          "value": 160
+          "value": 400
         },
         "replicationFactor$delegate": {
           "value": 1

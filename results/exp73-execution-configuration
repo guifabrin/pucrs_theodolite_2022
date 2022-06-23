@@ -1,22 +1,19 @@
 {
-  "executionId": 1,
-  "name": "uc2-beam-samza-lag-trend-binary-search-uc1-beam-samza-160",
-  "benchmark": "uc2-beam-samza-160",
+  "executionId": 4,
+  "name": "uc4-kstreams-lag-trend-binary-search-uc1-kstreams-160",
+  "benchmark": "uc4-kstreams-160",
   "load": {
-    "loadType": "NumSensors",
+    "loadType": "NumNestedGroups",
     "loadValues": [
-      10000,
-      20000,
-      4000,
-      8000,
-      16000,
-      32000,
-      64000,
-      128000,
-      256000,
-      512000,
-      1024000,
-      2048000
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
     ]
   },
   "resources": {
@@ -64,107 +61,127 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "beam-samza-service.yaml",
+        "resource": "uc4-jmx-configmap.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc2-beam-samza-lag-trend-binary-search-uc1-beam-samza-160"
+      "value": "uc4-kstreams-lag-trend-binary-search-uc1-kstreams-160"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "service-monitor.yaml",
+        "resource": "uc4-kstreams-deployment.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc2-beam-samza-lag-trend-binary-search-uc1-beam-samza-160"
+      "value": "uc4-kstreams-lag-trend-binary-search-uc1-kstreams-160"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc2-beam-samza-deployment.yaml",
+        "resource": "uc4-kstreams-service.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc2-beam-samza-lag-trend-binary-search-uc1-beam-samza-160"
+      "value": "uc4-kstreams-lag-trend-binary-search-uc1-kstreams-160"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc2-load-generator-deployment.yaml",
+        "resource": "uc4-service-monitor.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc2-beam-samza-lag-trend-binary-search-uc1-beam-samza-160"
+      "value": "uc4-kstreams-lag-trend-binary-search-uc1-kstreams-160"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc2-load-generator-service.yaml",
+        "resource": "uc4-load-generator-deployment.yaml",
         "properties": {
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc2-beam-samza-lag-trend-binary-search-uc1-beam-samza-160"
+      "value": "uc4-kstreams-lag-trend-binary-search-uc1-kstreams-160"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "beam-samza-service.yaml",
+        "resource": "uc4-load-generator-service.yaml",
+        "properties": {
+          "variableName": "deployed-for-execution"
+        }
+      },
+      "value": "uc4-kstreams-lag-trend-binary-search-uc1-kstreams-160"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc4-jmx-configmap.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc2-beam-samza-160"
+      "value": "uc4-kstreams-160"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "service-monitor.yaml",
+        "resource": "uc4-kstreams-deployment.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc2-beam-samza-160"
+      "value": "uc4-kstreams-160"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc2-beam-samza-deployment.yaml",
+        "resource": "uc4-kstreams-service.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc2-beam-samza-160"
+      "value": "uc4-kstreams-160"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc2-load-generator-deployment.yaml",
+        "resource": "uc4-service-monitor.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc2-beam-samza-160"
+      "value": "uc4-kstreams-160"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc2-load-generator-service.yaml",
+        "resource": "uc4-load-generator-deployment.yaml",
         "properties": {
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc2-beam-samza-160"
+      "value": "uc4-kstreams-160"
     },
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "beam-samza-service.yaml",
+        "resource": "uc4-load-generator-service.yaml",
+        "properties": {
+          "variableName": "deployed-for-benchmark"
+        }
+      },
+      "value": "uc4-kstreams-160"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc4-jmx-configmap.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }
@@ -174,7 +191,7 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "service-monitor.yaml",
+        "resource": "uc4-kstreams-deployment.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }
@@ -184,7 +201,7 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc2-beam-samza-deployment.yaml",
+        "resource": "uc4-kstreams-service.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }
@@ -194,7 +211,7 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc2-load-generator-deployment.yaml",
+        "resource": "uc4-service-monitor.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }
@@ -204,7 +221,17 @@
     {
       "patcher": {
         "type": "LabelPatcher",
-        "resource": "uc2-load-generator-service.yaml",
+        "resource": "uc4-load-generator-deployment.yaml",
+        "properties": {
+          "variableName": "app.kubernetes.io/created-by"
+        }
+      },
+      "value": "theodolite"
+    },
+    {
+      "patcher": {
+        "type": "LabelPatcher",
+        "resource": "uc4-load-generator-service.yaml",
         "properties": {
           "variableName": "app.kubernetes.io/created-by"
         }

@@ -1,7 +1,7 @@
 {
-  "executionId": 5,
-  "name": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams",
-  "benchmark": "uc3-kstreams",
+  "executionId": 6,
+  "name": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams-160",
+  "benchmark": "uc3-kstreams-160",
   "load": {
     "loadType": "NumSensors",
     "loadValues": [
@@ -69,7 +69,7 @@
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams"
+      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams-160"
     },
     {
       "patcher": {
@@ -79,7 +79,7 @@
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams"
+      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams-160"
     },
     {
       "patcher": {
@@ -89,7 +89,7 @@
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams"
+      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams-160"
     },
     {
       "patcher": {
@@ -99,7 +99,7 @@
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams"
+      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams-160"
     },
     {
       "patcher": {
@@ -109,7 +109,7 @@
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams"
+      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams-160"
     },
     {
       "patcher": {
@@ -119,7 +119,7 @@
           "variableName": "deployed-for-execution"
         }
       },
-      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams"
+      "value": "uc3-kstreams-lag-trend-binary-search-uc1-kstreams-160"
     },
     {
       "patcher": {
@@ -129,7 +129,7 @@
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc3-kstreams"
+      "value": "uc3-kstreams-160"
     },
     {
       "patcher": {
@@ -139,7 +139,7 @@
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc3-kstreams"
+      "value": "uc3-kstreams-160"
     },
     {
       "patcher": {
@@ -149,7 +149,7 @@
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc3-kstreams"
+      "value": "uc3-kstreams-160"
     },
     {
       "patcher": {
@@ -159,7 +159,7 @@
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc3-kstreams"
+      "value": "uc3-kstreams-160"
     },
     {
       "patcher": {
@@ -169,7 +169,7 @@
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc3-kstreams"
+      "value": "uc3-kstreams-160"
     },
     {
       "patcher": {
@@ -179,7 +179,7 @@
           "variableName": "deployed-for-benchmark"
         }
       },
-      "value": "uc3-kstreams"
+      "value": "uc3-kstreams-160"
     },
     {
       "patcher": {
