@@ -9,40 +9,26 @@
 </head>
 
 <body>
-  <div id="myDiv"></div>
   <script>
     let count = 0;
+    const benchmarks = ["uc1", "uc2", "uc3", "uc4"];
+    const systems = ["beam-flink", "beam-samza", "flink", "kstreams"];
     const systems_name = {
       "beam-flink": "Apache Beam",
       "beam-samza": "Apache Samza",
       flink: "Apache Flink",
       kstreams: "Apache Kafka",
     };
-    const benchmarks = ["uc1", "uc2", "uc3", "uc4"];
-    const partitions = {
-      uc1: [40, 160, 400, 1600],
-      uc2: [40, 160],
-      uc3: [40, 160],
-      uc4: [40, 160],
-    };
-    const systems = ["beam-flink", "beam-samza", "flink", "kstreams"];
+    const partitions = [40, 160, 400, 1600];
+    const _loadValues = [
+      10000, 20000, 4000, 8000, 16000, 32000, 64000, 128000, 256000, 512000,
+      1024000, 2048000,
+    ].sort((a, b) => a - b);
     const loadValues = {
-      uc1: [
-        10000, 20000, 4000, 8000, 16000, 32000, 64000, 128000, 256000,
-        512000, 1024000, 2048000,
-      ].sort((a, b) => a - b),
-
-      uc2: [
-        10000, 20000, 4000, 8000, 16000, 32000, 64000, 128000, 256000,
-        512000, 1024000, 2048000,
-      ].sort((a, b) => a - b),
-
-      uc3: [
-        10000, 20000, 4000, 8000, 16000, 32000, 64000, 128000, 256000,
-        512000, 1024000, 2048000,
-      ].sort((a, b) => a - b),
-
-      uc4: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].sort((a, b) => a - b),
+      uc1: _loadValues,
+      uc2: _loadValues,
+      uc3: _loadValues,
+      uc4: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     };
     fetch("./results.json")
       .then((response) => response.json())
@@ -52,30 +38,28 @@
           h3.innerText = `${uc.toUpperCase()} minimum machine results`;
           document.body.append(h3);
           for (const system of systems) {
-            const traces = [];
             if (!data[`${uc}-${system}`]) {
               continue;
             }
+            const traces = [];
             const div = document.createElement("div");
             div.id = `plotly_${count}`;
             document.body.appendChild(div);
-            for (const partition of partitions[uc]) {
+            for (const partition of partitions) {
               if (!data[`${uc}-${system}`][partition]) {
                 continue;
               }
               const values = data[`${uc}-${system}`][partition];
-              let yValues = null;
+              let yValues = loadValues[uc].map((value) => {
+                if (values[value]) {
+                  return (
+                    values[value].reduce((a, b) => a + b) / values[value].length
+                  );
+                } else {
+                  return null;
+                }
+              });
 
-                yValues = loadValues[uc].map(
-                  (value) => {
-                      if (values[value]){
-                          return values[value].reduce((a, b) => a + b) / values[value].length
-                      } else {
-                        return null
-                      }
-                  }
-                )
-                
               traces.push({
                 x: loadValues[uc],
                 y: yValues,
@@ -116,7 +100,7 @@
           const h3 = document.createElement("h3");
           h3.innerText = `${uc.toUpperCase()} minimum machine comparatives`;
           document.body.append(h3);
-          for (const partition of partitions[uc]) {
+          for (const partition of partitions) {
             const traces = [];
             const div = document.createElement("div");
             div.id = `plotly_${count}`;
@@ -192,7 +176,7 @@
               const div = document.createElement("div");
               div.id = `plotly_${count}`;
               document.body.appendChild(div);
-              for (const partition of partitions[uc]) {
+              for (const partition of partitions) {
                 if (!data[`${uc}-${system}`][partition]) {
                   continue;
                 }
@@ -236,7 +220,7 @@
             const h3 = document.createElement("h3");
             h3.innerText = `${uc.toUpperCase()} average comparatives time to run`;
             document.body.append(h3);
-            for (const partition of partitions[uc]) {
+            for (const partition of partitions) {
               const x = [];
               const y = [];
               const div = document.createElement("div");
